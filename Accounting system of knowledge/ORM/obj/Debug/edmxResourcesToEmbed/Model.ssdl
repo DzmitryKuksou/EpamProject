@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Login_Mail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Login" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="Mail" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="nchar" MaxLength="30" Nullable="false" />
+    <Property Name="IdProgrammer" Type="int" />
+    <Property Name="IdRole" Type="int" />
+  </EntityType>
+  <EntityType Name="Programmer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nchar" MaxLength="50" />
+    <Property Name="Surname" Type="nchar" MaxLength="50" />
+    <Property Name="Age" Type="int" />
+    <Property Name="Salary" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="Programmer_Sphere">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdProgrammer" Type="int" />
+    <Property Name="IdSphere" Type="int" />
+    <Property Name="Level" Type="int" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Sphere">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nchar" MaxLength="50" Nullable="false" />
+    <Property Name="IdCategory" Type="int" />
+  </EntityType>
+  <Association Name="FK_Login_Mail_Programmer">
+    <End Role="Programmer" Type="Self.Programmer" Multiplicity="0..1" />
+    <End Role="Login_Mail" Type="Self.Login_Mail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Programmer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Login_Mail">
+        <PropertyRef Name="IdProgrammer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Login_Mail_Role">
+    <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+    <End Role="Login_Mail" Type="Self.Login_Mail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Login_Mail">
+        <PropertyRef Name="IdRole" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Programmer_Sphere_IdProgrammer">
+    <End Role="Programmer" Type="Self.Programmer" Multiplicity="0..1" />
+    <End Role="Programmer_Sphere" Type="Self.Programmer_Sphere" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Programmer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Programmer_Sphere">
+        <PropertyRef Name="IdProgrammer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Programmer_Sphere_IdSphere">
+    <End Role="Sphere" Type="Self.Sphere" Multiplicity="0..1" />
+    <End Role="Programmer_Sphere" Type="Self.Programmer_Sphere" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sphere">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Programmer_Sphere">
+        <PropertyRef Name="IdSphere" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sphere_Category">
+    <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
+    <End Role="Sphere" Type="Self.Sphere" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sphere">
+        <PropertyRef Name="IdCategory" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Login_Mail" EntityType="Self.Login_Mail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Programmer" EntityType="Self.Programmer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Programmer_Sphere" EntityType="Self.Programmer_Sphere" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sphere" EntityType="Self.Sphere" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Login_Mail_Programmer" Association="Self.FK_Login_Mail_Programmer">
+      <End Role="Programmer" EntitySet="Programmer" />
+      <End Role="Login_Mail" EntitySet="Login_Mail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Login_Mail_Role" Association="Self.FK_Login_Mail_Role">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="Login_Mail" EntitySet="Login_Mail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Programmer_Sphere_IdProgrammer" Association="Self.FK_Programmer_Sphere_IdProgrammer">
+      <End Role="Programmer" EntitySet="Programmer" />
+      <End Role="Programmer_Sphere" EntitySet="Programmer_Sphere" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Programmer_Sphere_IdSphere" Association="Self.FK_Programmer_Sphere_IdSphere">
+      <End Role="Sphere" EntitySet="Sphere" />
+      <End Role="Programmer_Sphere" EntitySet="Programmer_Sphere" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sphere_Category" Association="Self.FK_Sphere_Category">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Sphere" EntitySet="Sphere" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

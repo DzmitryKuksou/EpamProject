@@ -1,0 +1,14 @@
+D:\Project C#\Accounting system of knowledge\DAL\bin\Debug\DAL.dll.config
+D:\Project C#\Accounting system of knowledge\DAL\bin\Debug\DAL.dll
+D:\Project C#\Accounting system of knowledge\DAL\bin\Debug\DAL.pdb
+D:\Project C#\Accounting system of knowledge\DAL\bin\Debug\DAL.Interface.dll
+D:\Project C#\Accounting system of knowledge\DAL\bin\Debug\EntityFramework.dll
+D:\Project C#\Accounting system of knowledge\DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\Project C#\Accounting system of knowledge\DAL\bin\Debug\DAL.Interface.pdb
+D:\Project C#\Accounting system of knowledge\DAL\bin\Debug\EntityFramework.xml
+D:\Project C#\Accounting system of knowledge\DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\Project C#\Accounting system of knowledge\DAL\obj\Debug\DALLogic.csprojResolveAssemblyReference.cache
+D:\Project C#\Accounting system of knowledge\DAL\obj\Debug\DAL.dll
+D:\Project C#\Accounting system of knowledge\DAL\obj\Debug\DAL.pdb
+D:\Project C#\Accounting system of knowledge\DAL\bin\Debug\ORM.dll
+D:\Project C#\Accounting system of knowledge\DAL\bin\Debug\ORM.pdb

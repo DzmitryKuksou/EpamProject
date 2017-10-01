@@ -1,0 +1,10 @@
+D:\Project C#\Accounting system of knowledge\ORM\bin\Debug\ORM.dll.config
+D:\Project C#\Accounting system of knowledge\ORM\bin\Debug\ORM.dll
+D:\Project C#\Accounting system of knowledge\ORM\bin\Debug\ORM.pdb
+D:\Project C#\Accounting system of knowledge\ORM\bin\Debug\EntityFramework.dll
+D:\Project C#\Accounting system of knowledge\ORM\bin\Debug\EntityFramework.SqlServer.dll
+D:\Project C#\Accounting system of knowledge\ORM\bin\Debug\EntityFramework.xml
+D:\Project C#\Accounting system of knowledge\ORM\bin\Debug\EntityFramework.SqlServer.xml
+D:\Project C#\Accounting system of knowledge\ORM\obj\Debug\ORM.dll
+D:\Project C#\Accounting system of knowledge\ORM\obj\Debug\ORM.pdb
+D:\Project C#\Accounting system of knowledge\ORM\obj\Debug\ORM.csprojResolveAssemblyReference.cache

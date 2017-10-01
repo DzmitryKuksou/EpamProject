@@ -1,0 +1,13 @@
+D:\Project C#\Accounting system of knowledge\BLL.Interface\bin\Debug\BLL.Interface.dll
+D:\Project C#\Accounting system of knowledge\BLL.Interface\bin\Debug\BLL.Interface.pdb
+D:\Project C#\Accounting system of knowledge\BLL.Interface\bin\Debug\DAL.dll
+D:\Project C#\Accounting system of knowledge\BLL.Interface\bin\Debug\DAL.Interface.dll
+D:\Project C#\Accounting system of knowledge\BLL.Interface\bin\Debug\EntityFramework.dll
+D:\Project C#\Accounting system of knowledge\BLL.Interface\bin\Debug\DAL.Interface.pdb
+D:\Project C#\Accounting system of knowledge\BLL.Interface\bin\Debug\DAL.pdb
+D:\Project C#\Accounting system of knowledge\BLL.Interface\bin\Debug\EntityFramework.xml
+D:\Project C#\Accounting system of knowledge\BLL.Interface\obj\Debug\BLL.Interface.csprojResolveAssemblyReference.cache
+D:\Project C#\Accounting system of knowledge\BLL.Interface\obj\Debug\BLL.Interface.dll
+D:\Project C#\Accounting system of knowledge\BLL.Interface\obj\Debug\BLL.Interface.pdb
+D:\Project C#\Accounting system of knowledge\BLL.Interface\bin\Debug\ORM.dll
+D:\Project C#\Accounting system of knowledge\BLL.Interface\bin\Debug\ORM.pdb

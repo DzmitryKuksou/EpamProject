@@ -1,0 +1,74 @@
+﻿@using WebApp.Infrastructure;
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="header head1">
+        <div class="container">
+            <div class="head-top">
+                <div class="logo">
+                    <a href="@Url.RouteUrl("Home")">Home</a>
+                </div>
+                <div class="login">
+                    <ul class="nav-login">
+                        @if (Request.IsAuthenticated)
+                        {
+                            <li><a href="@Url.RouteUrl("Logout")">Logout</a></li>
+                        }
+                        else
+                        {
+                            <li><a href="@Url.RouteUrl("Login")" data-toggle="modal" data-target="#LoginModal">Login</a></li>
+                                <li><a href="@Url.RouteUrl("Registration")" data-toggle="modal" data-target="#SignUpModal">Signup</a></li>
+                        }
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+            <div class="container">
+                <div class="banner-text">
+                    <h2>System Of Knowledge</h2>
+                </div>
+            </div>
+        </div>
+        <div class="nav-top">
+            <div class="container">
+                <div class="nav1">
+                    <div class="navbar1">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                <span class="sr-only"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav cl-effect-8">
+                                @{
+                                    if (Request.IsAuthenticated)
+                                    {
+                                        <li>
+                                            <a href="@Url.Action("UserProgrammer", "Programmer")">
+                                                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                                            </a>
+                                        </li>
+                                    }
+                                }
+                            </ul>
+                        </div>
+                        @RenderBody()
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>  
+</body>
+</html>
